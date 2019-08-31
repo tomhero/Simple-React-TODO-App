@@ -12,7 +12,7 @@ function App() {
     {
       _id: 2,
       title: 'Go to bed',
-      completed: false
+      completed: true
     },
     {
       _id: 3,
