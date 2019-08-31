@@ -31,11 +31,16 @@ function App() {
     setTodos(newTodo)
   }
 
+  const delTodo = _id => {
+    console.log(_id);
+    setTodos(todos.filter(todo => todo._id !== _id))
+  }
+
   return (
     <div className="App">
       <section className="App-body">
         <h1>Simple TODO</h1>
-        <Todos todos={todos} markComplete={changeMarked} />
+        <Todos todos={todos} markComplete={changeMarked} deleteTodo={delTodo} />
       </section>
     </div>
   );

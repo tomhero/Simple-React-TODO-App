@@ -7,7 +7,9 @@ function Todos(props) {
 
   // Map todos prop to an HTML elements
   const todoList = props.todos.map(todo => {
-    return <TodoItem key={todo._id} todo={todo} markComplete={props.markComplete} />
+    return <TodoItem key={todo._id} todo={todo} 
+      markComplete={props.markComplete}
+      deleteTodo={props.deleteTodo} />
   });
   
   return (

@@ -21,7 +21,8 @@ function TodoItem (props) {
       <p> 
         <input type="checkbox" name={'checkBox' + _id} onChange={props.markComplete.bind(this, _id)} />
         { '\t' }
-        {title} 
+        {title}
+        <button style={delBtnStyle} onClick={props.deleteTodo.bind(this, _id)}>✖</button>
       </p>
     </div>
   )
@@ -30,6 +31,19 @@ function TodoItem (props) {
 // prop types
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired
+}
+
+// delete button style
+const delBtnStyle = {
+  background: 'red',
+  opacity: 0.64,
+  border: 'none',
+  padding: '0.6em 0.8em',
+  marginLeft: '1.25em',
+  marginRight: '1em',
+  float: 'right',
+  color: 'white',
+  fontWeight: 'bold'
 }
 
 export default TodoItem
