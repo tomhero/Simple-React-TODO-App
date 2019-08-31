@@ -5,13 +5,9 @@ import TodoItem from './TodoItem'
 
 function Todos(props) {
 
-  const markComplete = _id => {
-    console.log(_id)
-  }
-
   // Map todos prop to an HTML elements
   const todoList = props.todos.map(todo => {
-    return <TodoItem key={todo._id} todo={todo} markComplete={markComplete} />
+    return <TodoItem key={todo._id} todo={todo} markComplete={props.markComplete} />
   });
   
   return (
