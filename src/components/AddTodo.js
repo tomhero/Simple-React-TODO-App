@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddTodo = () => {
+const AddTodo = props => {
 
     const [title, setTitle] = useState('')
 
@@ -8,9 +8,15 @@ const AddTodo = () => {
         setTitle(e.target.value)
     }
 
+    const onClickSubmit = (e) => {
+        e.preventDefault()
+        props.addTodo(title)
+        setTitle('')
+    }
+
     return (
         <div>
-            <form>
+            <form onSubmit={onClickSubmit}>
                 <input type="text" style={textFieldStyle} 
                     placeholder="Add New Todo..."
                     value={title}

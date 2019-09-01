@@ -15,6 +15,7 @@
 
 .App-body h1 {
   font-weight: lighter;
-  font-style: italic;
+  /* font-style: italic; */
+  color: #5ed4f4;
   font-size: 4rem;
 }

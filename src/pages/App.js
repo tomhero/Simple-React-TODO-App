@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuidv4 from 'uuid/v4';
 import Todos from '../components/Todos';
 import AddTodo from '../components/AddTodo'
 import './App.css';
@@ -6,17 +7,17 @@ import './App.css';
 function App() {
   const [todos, setTodos] = useState([
     {
-      _id: 1,
+      _id: uuidv4(),
       title: 'Take a bath',
       completed: false
     },
     {
-      _id: 2,
+      _id: uuidv4(),
       title: 'Go to bed',
       completed: false
     },
     {
-      _id: 3,
+      _id: uuidv4(),
       title: 'Get up at 6 o\'clock',
       completed: false
     }
@@ -33,15 +34,23 @@ function App() {
   }
 
   const delTodo = _id => {
-    console.log(_id);
     setTodos(todos.filter(todo => todo._id !== _id))
+  }
+
+  const addNewTodo = newTodoTitle => {
+    const newTodoObject = {
+      _id: uuidv4(),
+      title: newTodoTitle,
+      completed: false
+    }
+    setTodos([...todos, newTodoObject])
   }
 
   return (
     <div className="App">
       <section className="App-body">
-        <h1>Simple TODO</h1>
-        <AddTodo />
+        <h1>Simple React ⚛ TODO</h1>
+        <AddTodo addTodo={addNewTodo}/>
         <Todos todos={todos} markComplete={changeMarked} deleteTodo={delTodo} />
       </section>
     </div>
