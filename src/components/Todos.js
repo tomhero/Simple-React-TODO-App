@@ -14,10 +14,10 @@ function Todos(props) {
   
   return (
     <div id="todos-warp">
+        {/* TODO : Add header and add Todo form */}
         <h4>
             All Todos Items
         </h4>
-        {/* TODO : Adding some state */}
         {todoList}
     </div>
   );

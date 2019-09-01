@@ -43,7 +43,8 @@ const delBtnStyle = {
   marginRight: '1em',
   float: 'right',
   color: 'white',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  cursor: 'pointer'
 }
 
 export default TodoItem

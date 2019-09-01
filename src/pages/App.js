@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Todos from './components/Todos';
+import Todos from '../components/Todos';
+import AddTodo from '../components/AddTodo'
 import './App.css';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
     <div className="App">
       <section className="App-body">
         <h1>Simple TODO</h1>
+        <AddTodo />
         <Todos todos={todos} markComplete={changeMarked} deleteTodo={delTodo} />
       </section>
     </div>
