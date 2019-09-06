@@ -4,7 +4,7 @@
 
 .App-body {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +18,23 @@
   /* font-style: italic; */
   color: #5ed4f4;
   font-size: 4rem;
+}
+
+.App-footer {
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e2127;
+}
+
+.App-footer p {
+  color: whitesmoke;
+  font-size: 1.25rem;
+  margin: auto auto;
+  cursor: pointer;
+}
+
+.App-footer > p:hover {
+  color: #5ed4f4;
 }

@@ -53,6 +53,9 @@ function App() {
         <AddTodo addTodo={addNewTodo}/>
         <Todos todos={todos} markComplete={changeMarked} deleteTodo={delTodo} />
       </section>
+      <section className="App-footer">
+        <p>About</p>
+      </section>
     </div>
   );
 }
