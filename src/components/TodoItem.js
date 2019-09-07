@@ -13,6 +13,8 @@ function TodoItem (props) {
     }
   }
 
+  const capitalizeTitle = someTitle => someTitle.slice(0, 1).toUpperCase() + someTitle.slice(1)
+
   // extract properties
   const { _id, title } = props.todo 
 
@@ -21,7 +23,7 @@ function TodoItem (props) {
       <p> 
         <input type="checkbox" name={'checkBox' + _id} onChange={props.markComplete.bind(this, _id)} />
         { '\t' }
-        {title}
+        {capitalizeTitle(title)}
         <button style={delBtnStyle} onClick={props.deleteTodo.bind(this, _id)}>✖</button>
       </p>
     </div>

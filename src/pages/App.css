@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: first baseline;
   font-size: 1.25rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .App-body h1 {
@@ -28,13 +28,40 @@
   background-color: #1e2127;
 }
 
-.App-footer p {
-  color: whitesmoke;
-  font-size: 1.25rem;
-  margin: auto auto;
-  cursor: pointer;
+.App-footer > * {
+  margin: auto 0;
 }
 
-.App-footer > p:hover {
+.App-footer span {
+  color: aquamarine;
+  font-size: 1.25em;
+}
+
+.App-footer > p > a:first-child::before {
+  content: '🏠';
+  padding-right: 0.25em;
+}
+
+.App-footer > p > a:last-child::before {
+  content: '🤔';
+  padding-right: 0.25em;
+}
+
+.App-footer > p > a:hover:first-child::before {
+  content: '🏡' !important;
+}
+
+.App-footer > p > a:hover:last-child::before {
+  content: '🤨' !important;
+}
+
+.App-footer > p > a {
+  color: whitesmoke;
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.App-footer > p > a:hover {
   color: #5ed4f4;
 }
