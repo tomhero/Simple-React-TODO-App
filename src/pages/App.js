@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import uuidv4 from 'uuid/v4';
+import Footer from '../components/Footer'
 import Todos from '../components/Todos';
 import AddTodo from '../components/AddTodo'
+import About from './About'
 import './App.css';
 
 function App() {
@@ -40,23 +43,30 @@ function App() {
   const addNewTodo = newTodoTitle => {
     const newTodoObject = {
       _id: uuidv4(),
-      title: newTodoTitle,
+      title: newTodoTitle.toUpperCase(),
       completed: false
     }
     setTodos([...todos, newTodoObject])
   }
 
   return (
-    <div className="App">
-      <section className="App-body">
-        <h1>Simple React ⚛ TODO</h1>
-        <AddTodo addTodo={addNewTodo}/>
-        <Todos todos={todos} markComplete={changeMarked} deleteTodo={delTodo} />
-      </section>
-      <section className="App-footer">
-        <p>About</p>
-      </section>
-    </div>
+    <Router>
+      <div className="App">
+        <section className="App-body">
+          <h1>Simple React ⚛ TODO</h1>
+          <Route exact path="/" render={props => (
+            <React.Fragment>
+              <div>
+                <AddTodo addTodo={addNewTodo}/>
+                <Todos todos={todos} markComplete={changeMarked} deleteTodo={delTodo} />
+              </div>
+            </React.Fragment>
+          )} />
+          <Route path="/about" component={About}/>
+        </section>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
