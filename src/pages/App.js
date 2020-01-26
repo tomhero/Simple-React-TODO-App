@@ -59,7 +59,7 @@ function App() {
   const addNewTodo = newTodoTitle => {
     const newTodoObject = {
       _id: uuidv4(),
-      title: newTodoTitle.toUpperCase(),
+      title: newTodoTitle.toLowerCase(),
       completed: false
     }
     setTodos([...todos, newTodoObject])
